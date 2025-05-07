@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://ga74va0ua5p"]
+
+[node name="mueblecocina" type="Node3D"]
+
+[node name="tablonsuperior" type="CSGBox3D" parent="."]
+transform = Transform3D(2.5, 0, 0, 0, 1, 0, 0, 0, 5, 2.56172, 0, 2.49168)
+size = Vector3(3.69391, 1, 0.802856)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="tablonsuperior"]
+transform = Transform3D(0.8, 0, 0, 0, 1, 0, 0, 0, 0.3, -0.886084, 0.454576, -0.161424)
+operation = 2
+radius = 0.719426
+radial_segments = 20
+
+[node name="CSGBox3D" type="CSGBox3D" parent="tablonsuperior/CSGSphere3D"]
+transform = Transform3D(1.49909, 0, 0.0523492, 0, 0.6, 0, -0.0523493, 0, 1.49909, 0, 0.519882, 0)
+operation = 2
+size = Vector3(1, 1.21594, 1)
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="tablonsuperior"]
+transform = Transform3D(0.8, 0, 0, 0, 1, 0, 0, 0, 0.3, 0.725887, 0.454576, -0.161424)
+operation = 2
+radius = 0.719426
+radial_segments = 20
+
+[node name="CSGBox3D" type="CSGBox3D" parent="tablonsuperior/CSGSphere3D2"]
+transform = Transform3D(1.49909, 0, 0.0523492, 0, 0.6, 0, -0.0523493, 0, 1.49909, 0, 0.519882, 0)
+operation = 2
+size = Vector3(1, 1.21594, 1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.61777, -2.27939, 2.73621)
+size = Vector3(9.37408, 3.69458, 4.63989)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.101528, -0.0224304, 0.351959)
+operation = 2
+size = Vector3(8.69324, 3.3598, 4.15607)

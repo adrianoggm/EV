@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://ct2bw8dtan820"]
+
+[ext_resource type="PackedScene" uid="uid://lnsvu83kl78i" path="res://blender/ollanormales.glb" id="1_vlng3"]
+[ext_resource type="Shader" uid="uid://qn42uv3h0qo6" path="res://caldo.gdshader" id="2_1naq3"]
+[ext_resource type="Texture2D" uid="uid://7q4har3wxcdd" path="res://blender/agua.png" id="3_co0t4"]
+[ext_resource type="Script" uid="uid://01mg746ku5j0" path="res://camera_3d.gd" id="4_oknqn"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_vlng3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1naq3"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("2_1naq3")
+shader_parameter/height_map = ExtResource("3_co0t4")
+shader_parameter/strength = 65.573
+
+[node name="ollanormales" instance=ExtResource("1_vlng3")]
+
+[node name="Agua 1" type="MeshInstance3D" parent="." index="6"]
+transform = Transform3D(4.15488, 0, 0, 0, -1.79241e-07, 1, 0, -4.10056, -4.37114e-08, 0, 3.59879, 0)
+mesh = SubResource("QuadMesh_vlng3")
+surface_material_override/0 = SubResource("ShaderMaterial_1naq3")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="7"]
+omni_range = 110.53
+omni_attenuation = 0.148
+
+[node name="Camera3D" type="Camera3D" parent="." index="8"]
+current = true
+script = ExtResource("4_oknqn")
+
+[node name="Agua 2" type="MeshInstance3D" parent="." index="9"]
+transform = Transform3D(4.15488, 0, 0, 0, -1.79241e-07, 1, 0, -4.10056, -4.37114e-08, 0, 3.59879, 0)
+visible = false
+mesh = SubResource("QuadMesh_vlng3")
+surface_material_override/0 = SubResource("ShaderMaterial_1naq3")

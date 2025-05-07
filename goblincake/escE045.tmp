@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://qmnaf7wyjrlh"]
+
+[ext_resource type="Script" path="res://camera_3d.gd" id="1_fub8t"]
+[ext_resource type="PackedScene" uid="uid://j6dxff68ujc4" path="res://silla.tscn" id="1_oiceo"]
+[ext_resource type="Script" path="res://mesh_instance_3d_3.gd" id="2_chko1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3q1n1"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_151rh"]
+
+[node name="Escena" type="Node3D"]
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.03797)
+
+[node name="Camera3D" type="Camera3D" parent="Node3D"]
+script = ExtResource("1_fub8t")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.86764, 0, -0.187329)
+mesh = SubResource("BoxMesh_3q1n1")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+omni_range = 6.22193
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, -0.488516, 0)
+mesh = SubResource("PlaneMesh_151rh")
+
+[node name="Silla" parent="." instance=ExtResource("1_oiceo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.425224, -3.79722)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.305928, 0, -0.952055, 0, 1, 0, 0.952055, 0, 0.305928, 0.0406625, 0.756365, 0.945134)
+script = ExtResource("2_chko1")

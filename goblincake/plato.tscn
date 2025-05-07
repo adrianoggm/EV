@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://8ytcfde3wcl7"]
+
+[node name="Plato" type="CSGSphere3D"]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1, 0, 0, 0)
+radius = 0.927178
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0.495159, 0)
+operation = 2
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="."]
+transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 0, -1.07243, 0)
+operation = 2

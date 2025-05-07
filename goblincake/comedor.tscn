@@ -1,0 +1,245 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctno205juquob"]
+
+[ext_resource type="PackedScene" uid="uid://ga74va0ua5p" path="res://mueblecocina.tscn" id="2_eeqvw"]
+[ext_resource type="PackedScene" uid="uid://dvuh25ikfn3mn" path="res://mesa.tscn" id="3_w6nvf"]
+[ext_resource type="PackedScene" uid="uid://dq74uhysncyit" path="res://hornilla.tscn" id="4_0dl3l"]
+
+[node name="Comedor" type="CSGBox3D"]
+transform = Transform3D(22, 0, 0, 0, 11, 0, 0, 0, 18, 0.565308, 4.89316, 12.0575)
+size = Vector3(1.82751, 1.04053, 2.33972)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0.0107666, 0, -0.0325195)
+operation = 2
+size = Vector3(1.98193, 1, 2.51953)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.45, 0, 0, 0, 0.1, 0, -0.222438, -1.16465)
+operation = 2
+
+[node name="gruposillas1" type="Node3D" parent="."]
+transform = Transform3D(-0.0454545, 0, -3.97376e-09, 0, 0.0909091, 0, 4.85682e-09, 0, -0.0555556, 0.59873, -0.444833, -0.774716)
+
+[node name="Silla3" type="Node3D" parent="gruposillas1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99563, -0.124187, -3.5691)
+
+[node name="Patas" type="CSGBox3D" parent="gruposillas1/Silla3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0294129, 0.488056, 0)
+size = Vector3(0.1, 1, 0.1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="gruposillas1/Silla3/Patas"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, -0.457908, 0)
+size = Vector3(0.1, 0.1, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="gruposillas1/Silla3/Patas"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, -0.457908, 0)
+size = Vector3(1, 0.1, 0.1)
+
+[node name="ParteSuperior" type="Node3D" parent="gruposillas1/Silla3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Asiento" type="CSGSphere3D" parent="gruposillas1/Silla3/ParteSuperior"]
+transform = Transform3D(1.25, 0, 0, 0, 0.35, 0, 0, 0, 1.4, 0, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="gruposillas1/Silla3/ParteSuperior/Asiento"]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, -0.928979, 0)
+operation = 2
+
+[node name="Respaldo" type="CSGSphere3D" parent="gruposillas1/Silla3/ParteSuperior"]
+transform = Transform3D(0.344683, -0.173648, 0, 0.0607769, 0.984808, 0, 0, 0, 1.25, -0.521, 1.15, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="gruposillas1/Silla3/ParteSuperior/Respaldo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.564324, 0, 0)
+operation = 2
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="gruposillas1/Silla3/ParteSuperior/Respaldo"]
+transform = Transform3D(0.12, 0, 0, 0, 0.9, 0, 0, 0, 0.12, 0, -0.7, 0)
+
+[node name="Silla2" type="Node3D" parent="gruposillas1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99563, -0.124187, 2.81988)
+
+[node name="Patas" type="CSGBox3D" parent="gruposillas1/Silla2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0294129, 0.488056, 0)
+size = Vector3(0.1, 1, 0.1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="gruposillas1/Silla2/Patas"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, -0.457908, 0)
+size = Vector3(0.1, 0.1, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="gruposillas1/Silla2/Patas"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, -0.457908, 0)
+size = Vector3(1, 0.1, 0.1)
+
+[node name="ParteSuperior" type="Node3D" parent="gruposillas1/Silla2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Asiento" type="CSGSphere3D" parent="gruposillas1/Silla2/ParteSuperior"]
+transform = Transform3D(1.25, 0, 0, 0, 0.35, 0, 0, 0, 1.4, 0, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="gruposillas1/Silla2/ParteSuperior/Asiento"]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, -0.928979, 0)
+operation = 2
+
+[node name="Respaldo" type="CSGSphere3D" parent="gruposillas1/Silla2/ParteSuperior"]
+transform = Transform3D(0.344683, -0.173648, 0, 0.0607769, 0.984808, 0, 0, 0, 1.25, -0.521, 1.15, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="gruposillas1/Silla2/ParteSuperior/Respaldo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.564324, 0, 0)
+operation = 2
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="gruposillas1/Silla2/ParteSuperior/Respaldo"]
+transform = Transform3D(0.12, 0, 0, 0, 0.9, 0, 0, 0, 0.12, 0, -0.7, 0)
+
+[node name="Silla" type="Node3D" parent="gruposillas1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7552, -0.0620934, 0)
+
+[node name="Patas" type="CSGBox3D" parent="gruposillas1/Silla"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0294129, 0.488056, 0)
+size = Vector3(0.1, 1, 0.1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="gruposillas1/Silla/Patas"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, -0.457908, 0)
+size = Vector3(0.1, 0.1, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="gruposillas1/Silla/Patas"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, -0.457908, 0)
+size = Vector3(1, 0.1, 0.1)
+
+[node name="ParteSuperior" type="Node3D" parent="gruposillas1/Silla"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Asiento" type="CSGSphere3D" parent="gruposillas1/Silla/ParteSuperior"]
+transform = Transform3D(1.25, 0, 0, 0, 0.35, 0, 0, 0, 1.4, 0, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="gruposillas1/Silla/ParteSuperior/Asiento"]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, -0.928979, 0)
+operation = 2
+
+[node name="Respaldo" type="CSGSphere3D" parent="gruposillas1/Silla/ParteSuperior"]
+transform = Transform3D(0.344683, -0.173648, 0, 0.0607769, 0.984808, 0, 0, 0, 1.25, -0.521, 1.15, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="gruposillas1/Silla/ParteSuperior/Respaldo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.564324, 0, 0)
+operation = 2
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="gruposillas1/Silla/ParteSuperior/Respaldo"]
+transform = Transform3D(0.12, 0, 0, 0, 0.9, 0, 0, 0, 0.12, 0, -0.7, 0)
+
+[node name="gruposillas2" type="Node3D" parent="."]
+transform = Transform3D(0.0454545, 0, 0, 0, 0.0909091, 0, 0, 0, 0.0555556, -0.607148, -0.444196, -0.808133)
+
+[node name="Silla3" type="Node3D" parent="gruposillas2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99563, -0.124187, -3.5691)
+
+[node name="Patas" type="CSGBox3D" parent="gruposillas2/Silla3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0294129, 0.488056, 0)
+size = Vector3(0.1, 1, 0.1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="gruposillas2/Silla3/Patas"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, -0.457908, 0)
+size = Vector3(0.1, 0.1, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="gruposillas2/Silla3/Patas"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, -0.457908, 0)
+size = Vector3(1, 0.1, 0.1)
+
+[node name="ParteSuperior" type="Node3D" parent="gruposillas2/Silla3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Asiento" type="CSGSphere3D" parent="gruposillas2/Silla3/ParteSuperior"]
+transform = Transform3D(1.25, 0, 0, 0, 0.35, 0, 0, 0, 1.4, 0, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="gruposillas2/Silla3/ParteSuperior/Asiento"]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, -0.928979, 0)
+operation = 2
+
+[node name="Respaldo" type="CSGSphere3D" parent="gruposillas2/Silla3/ParteSuperior"]
+transform = Transform3D(0.344683, -0.173648, 0, 0.0607769, 0.984808, 0, 0, 0, 1.25, -0.521, 1.15, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="gruposillas2/Silla3/ParteSuperior/Respaldo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.564324, 0, 0)
+operation = 2
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="gruposillas2/Silla3/ParteSuperior/Respaldo"]
+transform = Transform3D(0.12, 0, 0, 0, 0.9, 0, 0, 0, 0.12, 0, -0.7, 0)
+
+[node name="Silla2" type="Node3D" parent="gruposillas2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99563, -0.124187, 2.81988)
+
+[node name="Patas" type="CSGBox3D" parent="gruposillas2/Silla2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0294129, 0.488056, 0)
+size = Vector3(0.1, 1, 0.1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="gruposillas2/Silla2/Patas"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, -0.457908, 0)
+size = Vector3(0.1, 0.1, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="gruposillas2/Silla2/Patas"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, -0.457908, 0)
+size = Vector3(1, 0.1, 0.1)
+
+[node name="ParteSuperior" type="Node3D" parent="gruposillas2/Silla2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Asiento" type="CSGSphere3D" parent="gruposillas2/Silla2/ParteSuperior"]
+transform = Transform3D(1.25, 0, 0, 0, 0.35, 0, 0, 0, 1.4, 0, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="gruposillas2/Silla2/ParteSuperior/Asiento"]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, -0.928979, 0)
+operation = 2
+
+[node name="Respaldo" type="CSGSphere3D" parent="gruposillas2/Silla2/ParteSuperior"]
+transform = Transform3D(0.344683, -0.173648, 0, 0.0607769, 0.984808, 0, 0, 0, 1.25, -0.521, 1.15, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="gruposillas2/Silla2/ParteSuperior/Respaldo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.564324, 0, 0)
+operation = 2
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="gruposillas2/Silla2/ParteSuperior/Respaldo"]
+transform = Transform3D(0.12, 0, 0, 0, 0.9, 0, 0, 0, 0.12, 0, -0.7, 0)
+
+[node name="Silla" type="Node3D" parent="gruposillas2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7552, -0.0620934, 0)
+
+[node name="Patas" type="CSGBox3D" parent="gruposillas2/Silla"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0294129, 0.488056, 0)
+size = Vector3(0.1, 1, 0.1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="gruposillas2/Silla/Patas"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, -0.457908, 0)
+size = Vector3(0.1, 0.1, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="gruposillas2/Silla/Patas"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, -0.457908, 0)
+size = Vector3(1, 0.1, 0.1)
+
+[node name="ParteSuperior" type="Node3D" parent="gruposillas2/Silla"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Asiento" type="CSGSphere3D" parent="gruposillas2/Silla/ParteSuperior"]
+transform = Transform3D(1.25, 0, 0, 0, 0.35, 0, 0, 0, 1.4, 0, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="gruposillas2/Silla/ParteSuperior/Asiento"]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, -0.928979, 0)
+operation = 2
+
+[node name="Respaldo" type="CSGSphere3D" parent="gruposillas2/Silla/ParteSuperior"]
+transform = Transform3D(0.344683, -0.173648, 0, 0.0607769, 0.984808, 0, 0, 0, 1.25, -0.521, 1.15, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="gruposillas2/Silla/ParteSuperior/Respaldo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.564324, 0, 0)
+operation = 2
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="gruposillas2/Silla/ParteSuperior/Respaldo"]
+transform = Transform3D(0.12, 0, 0, 0, 0.9, 0, 0, 0, 0.12, 0, -0.7, 0)
+
+[node name="mesa" parent="." instance=ExtResource("3_w6nvf")]
+transform = Transform3D(0.07, 0, 0, 0, 0.12, 0, 0, 0, 0.08, -0.0026969, -0.35994, -0.203872)
+
+[node name="mueblecocina" parent="." instance=ExtResource("2_eeqvw")]
+transform = Transform3D(-0.033, 0, -4.98286e-09, 0, 0.033, 0, 4.98286e-09, 0, -0.033, 0.0657237, -0.310141, 1.06068)
+
+[node name="hornilla" parent="." instance=ExtResource("4_0dl3l")]
+transform = Transform3D(-1.41094e-09, 0, 0.0280218, 0, 0.0338704, 0, -0.0322786, 0, -1.22487e-09, -0.899063, -0.228693, 0.346253)
+
+[node name="Node3D" type="Node3D" parent="."]

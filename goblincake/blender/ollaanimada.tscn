@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6bxjh8rjy2s7"]
+
+[ext_resource type="Script" uid="uid://ccdo8ayl4cuhg" path="res://ollaanimada.gd" id="1_284l2"]
+[ext_resource type="PackedScene" uid="uid://balmxitvlc61d" path="res://olla.tscn" id="1_kygsm"]
+[ext_resource type="PackedScene" uid="uid://cu1omatrbxpxf" path="res://tapa.tscn" id="2_284l2"]
+[ext_resource type="PackedScene" uid="uid://digqluvadjct3" path="res://cucharon.tscn" id="3_1ccta"]
+[ext_resource type="Script" uid="uid://01mg746ku5j0" path="res://camera_3d.gd" id="5_1ccta"]
+
+[node name="ollaanimada" type="Node3D"]
+script = ExtResource("1_284l2")
+
+[node name="olla" parent="." instance=ExtResource("1_kygsm")]
+
+[node name="tapa" parent="." instance=ExtResource("2_284l2")]
+
+[node name="cucharon" parent="." instance=ExtResource("3_1ccta")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+current = true
+script = ExtResource("5_1ccta")

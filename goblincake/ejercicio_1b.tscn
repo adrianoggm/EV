@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://btlhmulyus5ev"]
+
+[ext_resource type="PackedScene" uid="uid://ctno205juquob" path="res://comedor.tscn" id="1_p25v5"]
+[ext_resource type="PackedScene" uid="uid://bf20ovshy7ha7" path="res://torreon.tscn" id="2_oecsv"]
+
+[node name="Ejercicio1B" type="Node3D"]
+
+[node name="Comedor" parent="." instance=ExtResource("1_p25v5")]
+transform = Transform3D(22, 0, 0, 0, 11, 0, 0, 0, 18, -0.322047, 4.89316, 12.3723)
+
+[node name="Pasillo" type="Node3D" parent="."]
+transform = Transform3D(6, 0, 0, 0, 5.50115, 7.58505, 0, -2.39528, 17.4203, -0.281, 2.5394, -39.9691)
+
+[node name="brazopasillo2" type="CSGBox3D" parent="Pasillo"]
+transform = Transform3D(1, 0, 0, 0, 0.916858, -1.26417, 0, 0.126067, 0.916858, 0, -1.38504, 1.00452)
+size = Vector3(1, 1, 1.10889)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Pasillo/brazopasillo2"]
+transform = Transform3D(0.900008, 0, 0, 0, 0.900007, 4.54747e-13, 0, -3.12639e-13, 1, 0, -2.08616e-07, -0.0648454)
+operation = 2
+size = Vector3(1, 1, 1.67944)
+
+[node name="brazopasillo3" type="CSGBox3D" parent="Pasillo"]
+transform = Transform3D(-4.37114e-08, 0, 3.16667, 0.399213, 0.916858, 5.52588e-08, -0.289534, 0.126067, -4.00771e-08, -4.531, -0.250552, 0.181716)
+size = Vector3(1, 1, 2.56201)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Pasillo/brazopasillo3"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, -8.88178e-16, 0, 1, 9.53674e-07, 0, -0.0461279)
+operation = 2
+size = Vector3(1, 1, 2.71024)
+
+[node name="codo" type="CSGBox3D" parent="Pasillo"]
+transform = Transform3D(1, 0, 0, 0, 0.916858, -1.26417, 0, 0.126067, 0.916858, 0, -0.368954, 0.267588)
+size = Vector3(1, 1, 0.529785)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Pasillo/codo"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 1.92415e-11, 0, -1.44418e-12, 1, -0.406528, -2.98023e-08, -0.091269)
+operation = 2
+size = Vector3(1.91637, 1, 0.247463)
+
+[node name="Node3D" type="Node3D" parent="Pasillo/codo"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Pasillo/codo"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 8.72546e-12, 0, -6.55476e-13, 1, -0.0214233, -5.96046e-08, 0.0358849)
+operation = 2
+size = Vector3(1.04761, 1, 0.479118)
+
+[node name="torreon" parent="." instance=ExtResource("2_oecsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -103.095, 10.2816, -35.4349)

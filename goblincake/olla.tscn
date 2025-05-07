@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://balmxitvlc61d"]
+
+[ext_resource type="PackedScene" uid="uid://ykmhu5v5ey0e" path="res://blender/olla.glb" id="1_q2bw8"]
+
+[node name="olla" instance=ExtResource("1_q2bw8")]
