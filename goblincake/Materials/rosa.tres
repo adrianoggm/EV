@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cu6va35lo1o3e"]
+
+[ext_resource type="Texture2D" uid="uid://5jp22wse307" path="res://utils/petalonoraml.jpg" id="1_i0jlx"]
+
+[resource]
+transparency = 4
+albedo_color = Color(0.404019, 0.0425888, 0.11604, 1)
+metallic_specular = 0.05
+roughness = 0.51
+normal_enabled = true
+normal_scale = 1.53
+normal_texture = ExtResource("1_i0jlx")

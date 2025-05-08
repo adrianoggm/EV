@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bnaiodhl0dv54"]
+
+[ext_resource type="Texture2D" uid="uid://bg4p6sbynmqv2" path="res://Materials/stone/PavingStones142_1K-JPG_NormalDX.jpg" id="1_hufl7"]
+[ext_resource type="Texture2D" uid="uid://dalksmuqikul4" path="res://Materials/stone/PavingStones142_1K-JPG_Roughness.jpg" id="1_ivouk"]
+
+[resource]
+albedo_color = Color(0.286001, 0.088599, 0.121997, 0.553)
+roughness_texture = ExtResource("1_ivouk")
+normal_enabled = true
+normal_texture = ExtResource("1_hufl7")

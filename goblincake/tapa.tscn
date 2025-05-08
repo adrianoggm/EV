@@ -1,5 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cu1omatrbxpxf"]
+[gd_scene load_steps=3 format=3 uid="uid://cu1omatrbxpxf"]
 
 [ext_resource type="PackedScene" uid="uid://jsfovxi1esq7" path="res://blender/tapa.glb" id="1_p7tl2"]
+[ext_resource type="Material" uid="uid://dnpxwb247hfy6" path="res://Materials/acero2.tres" id="2_ch1xm"]
 
 [node name="tapa" instance=ExtResource("1_p7tl2")]
+
+[node name="tapaaplicada_001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_ch1xm")

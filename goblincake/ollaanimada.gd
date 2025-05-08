@@ -4,7 +4,7 @@ extends Node
 @export var delay_between := 0.1
 
 # Referencias a los AnimationPlayer dentro de OllaAnimada
-@onready var olla_anim = $olla/AnimationPlayer as AnimationPlayer
+#onready var olla_anim = $olla/AnimationPlayer as AnimationPlayer
 @onready var tapa_anim = $tapa/AnimationPlayer     as AnimationPlayer
 @onready var cuch_anim = $cucharon/AnimationPlayer  as AnimationPlayer
 

@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://gsnkgovlwtfp"]
+
+[resource]
+transparency = 1
+cull_mode = 2
+albedo_color = Color(0.372, 0.449, 0.809, 0.436)
+metallic_specular = 0.88
+roughness = 0.0
+subsurf_scatter_enabled = true
+subsurf_scatter_strength = 0.2
+refraction_enabled = true
+refraction_scale = -1.0
