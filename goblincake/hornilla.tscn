@@ -1,10 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://dq74uhysncyit"]
+[gd_scene load_steps=17 format=3 uid="uid://dq74uhysncyit"]
 
 [ext_resource type="Material" uid="uid://bnaiodhl0dv54" path="res://Materials/stone.tres" id="1_1k3pg"]
 [ext_resource type="PackedScene" uid="uid://b6bxjh8rjy2s7" path="res://blender/ollaanimada.tscn" id="1_hil6c"]
 [ext_resource type="Material" uid="uid://biogc8xu5bnud" path="res://Materials/onyx.tres" id="2_tya4x"]
 [ext_resource type="Material" uid="uid://gsnkgovlwtfp" path="res://Materials/cristal.tres" id="3_pfecg"]
-[ext_resource type="Texture2D" uid="uid://ri1nbycs4je2" path="res://utils/humo.png" id="5_43g6j"]
+[ext_resource type="Material" uid="uid://b2kgnthbygblo" path="res://Materials/fuego2.tres" id="5_pwys7"]
 [ext_resource type="Material" uid="uid://qj251it2m06f" path="res://Materials/wood.tres" id="6_oud8c"]
 [ext_resource type="Script" uid="uid://cd8r1g3f5ieji" path="res://lucesfuego.gd" id="7_pwys7"]
 
@@ -40,19 +40,8 @@ color_ramp = SubResource("GradientTexture1D_oud8c")
 hue_variation_min = -2.23517e-08
 hue_variation_max = -2.23517e-08
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_43g6j"]
-transparency = 1
-blend_mode = 1
-shading_mode = 0
-vertex_color_use_as_albedo = true
-albedo_color = Color(0.960351, 0.960351, 0.960351, 0.277)
-albedo_texture = ExtResource("5_43g6j")
-billboard_mode = 2
-grow = true
-grow_amount = 0.283
-
 [sub_resource type="QuadMesh" id="QuadMesh_pfecg"]
-material = SubResource("StandardMaterial3D_43g6j")
+material = ExtResource("5_pwys7")
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_43g6j"]
 
@@ -250,7 +239,7 @@ script = ExtResource("7_pwys7")
 transform = Transform3D(1.00257, 0, 0, 0, 1.00257, 0, 0, 0, 1.00257, 5.80683, -5.47653, 3.53692)
 light_color = Color(0.999999, 0.694726, 0.439237, 1)
 light_energy = 3.33
-light_size = 0.17
+light_size = 0.205
 shadow_enabled = true
 omni_range = 100.0
 omni_attenuation = 0.342

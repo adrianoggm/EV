@@ -7,9 +7,7 @@
 [resource]
 albedo_texture = ExtResource("1_fa7ok")
 metallic_specular = 0.61
-roughness = 0.1
+roughness = 0.07
 roughness_texture = ExtResource("2_j40he")
-normal_enabled = true
 normal_texture = ExtResource("1_8v0fl")
-anisotropy_enabled = true
 anisotropy = 0.18

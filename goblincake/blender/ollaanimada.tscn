@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cu1omatrbxpxf" path="res://tapa.tscn" id="2_284l2"]
 [ext_resource type="PackedScene" uid="uid://digqluvadjct3" path="res://cucharon.tscn" id="3_1ccta"]
 [ext_resource type="Script" uid="uid://01mg746ku5j0" path="res://camera_3d.gd" id="5_1ccta"]
-[ext_resource type="PackedScene" uid="uid://kmocxiq3jnp7" path="res://Materials/ollanormales.tscn" id="5_rbfqd"]
+[ext_resource type="PackedScene" uid="uid://kmocxiq3jnp7" path="res://ollanormales.tscn" id="5_rbfqd"]
 
 [node name="ollaanimada" type="Node3D"]
 script = ExtResource("1_284l2")

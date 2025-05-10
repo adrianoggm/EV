@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dllxiplpycdjh"]
 
-[ext_resource type="Texture2D" uid="uid://dh2trox1xnk8e" path="res://utils/aceronoramles.jpg" id="1_2k86w"]
+[ext_resource type="Texture2D" uid="uid://dh2trox1xnk8e" path="res://utils/aceronoramles.jpg" id="1_2k0y8"]
 
 [resource]
 albedo_color = Color(0.695422, 0.89664, 0.984814, 1)
@@ -11,7 +11,7 @@ emission_enabled = true
 emission = Color(0, 1.657, 0, 1)
 emission_energy_multiplier = 1.1
 normal_scale = -2.87
-normal_texture = ExtResource("1_2k86w")
+normal_texture = ExtResource("1_2k0y8")
 clearcoat = 0.4
 clearcoat_roughness = 0.3
 anisotropy = 0.05

@@ -40,10 +40,11 @@ transform = Transform3D(92.7893, 0, 0, 0, -3.44114e-06, 50.3265, 0, -78.7241, -2
 mesh = SubResource("QuadMesh_fav0f")
 surface_material_override/0 = ExtResource("3_fav0f")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="sunlight" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.415, 0)
 light_color = Color(0.7, 0.4, 0.2, 1)
 shadow_enabled = true
+directional_shadow_mode = 1
 directional_shadow_split_1 = 0.217
 
 [node name="Camera3D" type="Camera3D" parent="."]
