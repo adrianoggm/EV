@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://1gc1vjpj7mwk"]
+
+[ext_resource type="Texture2D" uid="uid://lagcx1xp5be0" path="res://Materials/wood/Bark014_1K-JPG_Displacement.jpg" id="1_ohr2h"]
+
+[resource]
+albedo_color = Color(0.331627, 0.150158, 0.0621258, 1)
+albedo_texture = ExtResource("1_ohr2h")
+metallic_specular = 0.0

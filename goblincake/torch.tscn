@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bg7gdvvs8wuj"]
+
+[ext_resource type="PackedScene" uid="uid://cgwyoq1kkk5e" path="res://utils/antorcha/Torch.fbx" id="1_pa17o"]
+
+[node name="Torch" instance=ExtResource("1_pa17o")]
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.378931, 0.598689, 0.041068)
+light_color = Color(0.129183, 0.536267, 0.390004, 1)
+light_energy = 1.435
+omni_range = 66.176
+omni_attenuation = 0.2

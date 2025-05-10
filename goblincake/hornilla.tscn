@@ -1,12 +1,185 @@
-[gd_scene load_steps=6 format=3 uid="uid://dq74uhysncyit"]
+[gd_scene load_steps=18 format=3 uid="uid://dq74uhysncyit"]
 
 [ext_resource type="Material" uid="uid://bnaiodhl0dv54" path="res://Materials/stone.tres" id="1_1k3pg"]
 [ext_resource type="PackedScene" uid="uid://b6bxjh8rjy2s7" path="res://blender/ollaanimada.tscn" id="1_hil6c"]
 [ext_resource type="Material" uid="uid://biogc8xu5bnud" path="res://Materials/onyx.tres" id="2_tya4x"]
 [ext_resource type="Material" uid="uid://gsnkgovlwtfp" path="res://Materials/cristal.tres" id="3_pfecg"]
+[ext_resource type="Texture2D" uid="uid://ri1nbycs4je2" path="res://utils/humo.png" id="5_43g6j"]
+[ext_resource type="Material" uid="uid://qj251it2m06f" path="res://Materials/wood.tres" id="6_oud8c"]
+[ext_resource type="Script" uid="uid://cd8r1g3f5ieji" path="res://lucesfuego.gd" id="7_pwys7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pfecg"]
 albedo_color = Color(0.169245, 0.169245, 0.169245, 1)
+
+[sub_resource type="Gradient" id="Gradient_43g6j"]
+offsets = PackedFloat32Array(0, 0.0127226, 0.173028, 0.318066, 0.529262, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.0229008, 0.0229008, 0.0229008, 1, 0, 0.472567, 0.811252, 1, 1, 0.7, 0, 1, 1, 0.014, 0.014, 1, 0.00351917, 0.00351917, 0.00351917, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_oud8c"]
+gradient = SubResource("Gradient_43g6j")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pfecg"]
+emission_shape = 1
+emission_sphere_radius = 1.75
+angle_min = 17.5
+angle_max = 360.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 0.5
+initial_velocity_max = 5.0
+angular_velocity_min = 0.999984
+angular_velocity_max = 60.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 0.999998
+linear_accel_max = 4.0
+radial_accel_min = 0.999998
+radial_accel_max = 5.0
+tangential_accel_min = 0.999998
+tangential_accel_max = 3.0
+color_ramp = SubResource("GradientTexture1D_oud8c")
+hue_variation_min = -2.23517e-08
+hue_variation_max = -2.23517e-08
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_43g6j"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.960351, 0.960351, 0.960351, 0.277)
+albedo_texture = ExtResource("5_43g6j")
+billboard_mode = 2
+grow = true
+grow_amount = 0.283
+
+[sub_resource type="QuadMesh" id="QuadMesh_pfecg"]
+material = SubResource("StandardMaterial3D_43g6j")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_43g6j"]
+
+[sub_resource type="Animation" id="Animation_pwys7"]
+resource_name = "flick"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("luzfuegoclara:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.62, 1.13, 1.16333, 1.19667, 1.23, 1.26333, 1.29667, 1.33, 1.36333, 1.39667, 1.43, 1.46333, 1.49667, 1.53, 1.56333, 1.59667, 1.63, 1.66333, 1.69667, 1.73, 1.76333, 1.79667, 1.83, 1.86333, 1.89667, 1.93, 1.96333, 1.99667, 2.03),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [3.33, 4.092, 0.282, 6.313, 6.1903, 6.06759, 5.94489, 5.82219, 5.69948, 5.57678, 5.45407, 5.33137, 5.20867, 5.08596, 4.96326, 4.84056, 4.71785, 4.59515, 4.47244, 4.34974, 4.22704, 4.10433, 3.98163, 3.85893, 3.73622, 3.61352, 3.49082, 3.36811, 3.24541, 3.1227, 3.0]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("luzfuegoclara:light_color:r")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0.999999, -0.25, 0, 0.25, 0, 0.999999, -0.25, 0, 0.25, 0, 0.657069, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2, 0.62, 1.13, 2.02)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("luzfuegoclara:light_color:g")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0.694726, -0.25, 0, 0.25, 0, 0.694726, -0.25, 0, 0.25, 0, 0.159707, -0.25, 0, 0.25, 0, 0.694118, -0.25, 0, 0.25, 0, 0.694118, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2, 0.62, 1.12, 2.02)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("luzfuegoclara:light_color:b")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0.439237, -0.25, 0, 0.25, 0, 0.439237, -0.25, 0, 0.25, 0, 0.148937, -0.25, 0, 0.25, 0, 0.439216, -0.25, 0, 0.25, 0, 0.439216, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2, 0.62, 1.1, 2)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("luzfuegoclara:light_color:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2, 0.62, 1.1, 2)
+}
+
+[sub_resource type="Animation" id="Animation_t83v2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("luzfuegoclara:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.33]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("luzfuegoclara:light_color:r")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.999999, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("luzfuegoclara:light_color:g")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.694726, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("luzfuegoclara:light_color:b")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.439237, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("luzfuegoclara:light_color:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t83v2"]
+_data = {
+&"RESET": SubResource("Animation_t83v2"),
+&"flick": SubResource("Animation_pwys7")
+}
 
 [node name="hornilla" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02485, 6.95683, -0.397081)
@@ -15,7 +188,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02485, 6.95683, -0.397081)
 transform = Transform3D(1.8949, 0, 0, 0, 1.41094, 0, 0, 0, 1.86545, 0, -0.235114, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.61777, -2.27939, 2.73621)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.61822, -2.25266, 2.7257)
 size = Vector3(9.37408, 3.69458, 4.63989)
 material = ExtResource("1_1k3pg")
 
@@ -46,3 +219,50 @@ size = Vector3(2.28577, 1, 1)
 
 [node name="ollaanimada" parent="." instance=ExtResource("1_hil6c")]
 transform = Transform3D(-0.0282132, -0.000922389, -0.74525, 6.30974e-05, 0.745784, -0.000925436, 0.745251, -9.80489e-05, -0.0282131, 5.5159, 1.05608, 4.86936)
+
+[node name="fuego" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0375, -3.42776, 5.59176)
+amount = 100
+lifetime = 0.4
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_pfecg")
+draw_pass_1 = SubResource("QuadMesh_pfecg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.120863, 1.70619, 0, -1.38174, 0.149243, 0, 0, 0, 1.6306, 2.49399, -5.09001, 5.84678)
+mesh = SubResource("CylinderMesh_43g6j")
+surface_material_override/0 = ExtResource("6_oud8c")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0727843, 1.71035, 0, -1.38511, -0.089875, 0, 0, 0, 1.6306, 7.46548, -4.89819, 6.81847)
+mesh = SubResource("CylinderMesh_43g6j")
+surface_material_override/0 = ExtResource("6_oud8c")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.260758, -0.31835, -1.57258, -1.36229, 0.0609357, 0.301011, 0, 1.68176, -0.308591, 5.3269, -4.81083, 4.26242)
+mesh = SubResource("CylinderMesh_43g6j")
+surface_material_override/0 = ExtResource("6_oud8c")
+
+[node name="lucesfuego" type="Node3D" parent="."]
+script = ExtResource("7_pwys7")
+
+[node name="luzfuegoclara" type="OmniLight3D" parent="lucesfuego"]
+transform = Transform3D(1.00257, 0, 0, 0, 1.00257, 0, 0, 0, 1.00257, 5.80683, -5.47653, 3.53692)
+light_color = Color(0.999999, 0.694726, 0.439237, 1)
+light_energy = 3.33
+light_size = 0.17
+shadow_enabled = true
+omni_range = 100.0
+omni_attenuation = 0.342
+
+[node name="luzfuegooscura" type="OmniLight3D" parent="lucesfuego"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.87548, -4.12359, 0)
+visible = false
+light_color = Color(1, 0.7, 0.3, 1)
+omni_range = 1621.81
+omni_attenuation = 0.024
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="lucesfuego"]
+libraries = {
+&"": SubResource("AnimationLibrary_t83v2")
+}

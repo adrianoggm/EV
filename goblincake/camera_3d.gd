@@ -2,7 +2,7 @@ extends Camera3D
 
 # Variables para configurar la cámara orbital
 var target: Node3D = null  # Nodo padre como objetivo
-var distance: float = 10.0  # Distancia fija al target
+var distance: float = 60.0  # Distancia fija al target
 var azimuth: float = 0.0  # Ángulo horizontal (en grados)
 var elevation: float = 20.0  # Ángulo vertical (en grados)
 var rotation_speed: float = 60.0  # Velocidad de rotación en grados por segundo

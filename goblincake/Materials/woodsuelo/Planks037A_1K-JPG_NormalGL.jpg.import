@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k5v5iadq1gtj"
-path.s3tc="res://.godot/imported/PavingStones142_1K-JPG_NormalGL.jpg-8053eeb8b10249c661db34eaee8c6187.s3tc.ctex"
+uid="uid://dggxkp81wmjth"
+path.s3tc="res://.godot/imported/Planks037A_1K-JPG_NormalGL.jpg-1390b621941f14b4f2d0db5b0ea3b3a8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Materials/stone/PavingStones142_1K-JPG_NormalGL.jpg"
-dest_files=["res://.godot/imported/PavingStones142_1K-JPG_NormalGL.jpg-8053eeb8b10249c661db34eaee8c6187.s3tc.ctex"]
+source_file="res://Materials/woodsuelo/Planks037A_1K-JPG_NormalGL.jpg"
+dest_files=["res://.godot/imported/Planks037A_1K-JPG_NormalGL.jpg-1390b621941f14b4f2d0db5b0ea3b3a8.s3tc.ctex"]
 
 [params]
 
@@ -25,7 +25,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://Materials/stone/PavingStones142_1K-JPG_NormalGL.jpg"
+roughness/src_normal="res://Materials/woodsuelo/Planks037A_1K-JPG_NormalGL.jpg"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

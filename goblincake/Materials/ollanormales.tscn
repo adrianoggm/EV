@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://kmocxiq3jnp7"]
+[gd_scene load_steps=12 format=3 uid="uid://kmocxiq3jnp7"]
 
 [ext_resource type="PackedScene" uid="uid://ddhvp6qtgq01l" path="res://blender/ollanormales.glb" id="1_yw6as"]
 [ext_resource type="Shader" uid="uid://qn42uv3h0qo6" path="res://caldo.gdshader" id="2_ln7dt"]
@@ -6,7 +6,6 @@
 [ext_resource type="Material" uid="uid://gsnkgovlwtfp" path="res://Materials/cristal.tres" id="2_t5ssj"]
 [ext_resource type="Material" uid="uid://cu6va35lo1o3e" path="res://Materials/rosa.tres" id="3_gyhl8"]
 [ext_resource type="Texture2D" uid="uid://7q4har3wxcdd" path="res://blender/agua.png" id="3_q5t6r"]
-[ext_resource type="Script" uid="uid://01mg746ku5j0" path="res://camera_3d.gd" id="4_gyhl8"]
 [ext_resource type="Material" uid="uid://dnpxwb247hfy6" path="res://Materials/acero2.tres" id="4_wlvg6"]
 [ext_resource type="Material" uid="uid://c337582a6hyjw" path="res://Materials/caldo.tres" id="6_reua8"]
 
@@ -47,17 +46,7 @@ transform = Transform3D(4.15488, 0, 0, 0, -1.79241e-07, 1, 0, -4.10056, -4.37114
 mesh = SubResource("SphereMesh_reua8")
 surface_material_override/0 = ExtResource("6_reua8")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="." index="7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.14595, 13.2235, 0)
-visible = false
-omni_range = 110.53
-omni_attenuation = 0.148
-
-[node name="Camera3D" type="Camera3D" parent="." index="8"]
-current = true
-script = ExtResource("4_gyhl8")
-
-[node name="Agua 2" type="MeshInstance3D" parent="." index="9"]
+[node name="Agua 2" type="MeshInstance3D" parent="." index="7"]
 transform = Transform3D(4.15488, 0, 0, 0, -1.79241e-07, 1, 0, -4.10056, -4.37114e-08, 0, 3.59879, 0)
 visible = false
 mesh = SubResource("QuadMesh_wlvg6")

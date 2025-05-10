@@ -1,10 +1,14 @@
-[gd_scene format=3 uid="uid://ga74va0ua5p"]
+[gd_scene load_steps=3 format=3 uid="uid://ga74va0ua5p"]
+
+[ext_resource type="Material" uid="uid://biogc8xu5bnud" path="res://Materials/onyx.tres" id="1_neddn"]
+[ext_resource type="Material" uid="uid://bnaiodhl0dv54" path="res://Materials/stone.tres" id="2_bw0n5"]
 
 [node name="mueblecocina" type="Node3D"]
 
 [node name="tablonsuperior" type="CSGBox3D" parent="."]
 transform = Transform3D(2.5, 0, 0, 0, 1, 0, 0, 0, 5, 2.56172, 0, 2.49168)
 size = Vector3(3.69391, 1, 0.802856)
+material = ExtResource("1_neddn")
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="tablonsuperior"]
 transform = Transform3D(0.8, 0, 0, 0, 1, 0, 0, 0, 0.3, -0.886084, 0.454576, -0.161424)
@@ -31,8 +35,10 @@ size = Vector3(1, 1.21594, 1)
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.61777, -2.27939, 2.73621)
 size = Vector3(9.37408, 3.69458, 4.63989)
+material = ExtResource("2_bw0n5")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.101528, -0.0224304, 0.351959)
 operation = 2
 size = Vector3(8.69324, 3.3598, 4.15607)
+material = ExtResource("2_bw0n5")
