@@ -5,9 +5,6 @@
 
 [node name="Ejercicio1B" type="Node3D"]
 
-[node name="Comedor" parent="." instance=ExtResource("1_p25v5")]
-transform = Transform3D(22, 0, 0, 0, 11, 0, 0, 0, 18, -0.322047, 4.89316, 12.3723)
-
 [node name="Pasillo" type="Node3D" parent="."]
 transform = Transform3D(6, 0, 0, 0, 5.50115, 7.58505, 0, -2.39528, 17.4203, -0.281, 2.5394, -39.9691)
 
@@ -47,3 +44,6 @@ size = Vector3(1.04761, 1, 0.479118)
 
 [node name="torreon" parent="." instance=ExtResource("2_oecsv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -103.095, 10.2816, -35.4349)
+
+[node name="Comedor" parent="." instance=ExtResource("1_p25v5")]
+transform = Transform3D(-6.55671e-09, 0, 0.15, 0, 0.15, 0, -0.15, 0, -6.55671e-09, -0.3623, 0, -1.33791)
