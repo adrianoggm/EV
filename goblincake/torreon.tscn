@@ -1,27 +1,57 @@
-[gd_scene load_steps=2 format=3 uid="uid://bf20ovshy7ha7"]
+[gd_scene load_steps=9 format=3 uid="uid://bf20ovshy7ha7"]
 
 [ext_resource type="PackedScene" uid="uid://cpyomevaxtkll" path="res://blender/escaleras.glb" id="1_0fsli"]
+[ext_resource type="Material" uid="uid://bhmqnopyhml8c" path="res://Materials/stonewall.tres" id="1_3ryhr"]
+[ext_resource type="Material" uid="uid://bnaiodhl0dv54" path="res://Materials/stone.tres" id="2_d63e5"]
+[ext_resource type="Material" uid="uid://dwtlowqkcbu0k" path="res://Materials/woodsuelo.tres" id="3_yo6w7"]
+[ext_resource type="PackedScene" uid="uid://cyo8cjo5x3x70" path="res://escaleras.tscn" id="5_d63e5"]
+[ext_resource type="PackedScene" uid="uid://bg7gdvvs8wuj" path="res://torch.tscn" id="6_yo6w7"]
+[ext_resource type="ArrayMesh" uid="uid://depg488a1wdey" path="res://M-FF_iOS_VILLAIN_Harry_Osbourne_Green_Goblin_Ultimate/M-FF_iOS_VILLAIN_Harry_Osbourne_Green_Goblin_Ultimate.obj" id="7_7bbwf"]
+[ext_resource type="ArrayMesh" uid="uid://dj4rlmia3povg" path="res://Bowser Throne/bowserthrone.obj" id="8_tqfs4"]
 
 [node name="torreon" type="Node3D"]
 
 [node name="Salonreal" type="CSGBox3D" parent="."]
-transform = Transform3D(22, 0, 0, 0, -4.80825e-07, 18, 0, -11, -7.86805e-07, -12.161, 26.6726, 23.3255)
+transform = Transform3D(30.5253, 0, 0, 0, -4.80825e-07, 18, 0, -11, -7.86805e-07, -12.161, 26.6726, 23.3255)
 size = Vector3(1.51648, 5.8772, 1)
+material = ExtResource("1_3ryhr")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Salonreal"]
-transform = Transform3D(0.9, 0, 0, 0, 0.9, 7.10543e-15, 0, -1.77636e-15, 0.9, 0, 0.0245136, 0)
+transform = Transform3D(0.900003, 0, 0, 0, 0.9, -2.84217e-13, 0, 0, 0.9, 0.131397, 0.0245135, 0)
 operation = 2
-size = Vector3(1, 6.19498, 1)
+size = Vector3(1.29199, 6.19498, 1)
+material = ExtResource("2_d63e5")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Salonreal"]
 transform = Transform3D(0.2, 0, 0, 0, 0.45, 0, 0, -8.88178e-16, 0.1, -0.0404885, 2.1519, -0.456985)
 operation = 2
 size = Vector3(1.10638, 2.48148, 1)
+material = ExtResource("3_yo6w7")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Salonreal"]
 transform = Transform3D(0.2, 0, 0, 0, 0.45, 0, 0, -8.88178e-16, 0.1, 0.117804, 2.46664, -0.456985)
 operation = 2
 size = Vector3(2.6893, 1.08266, 1)
+material = ExtResource("3_yo6w7")
+
+[node name="Torch" parent="Salonreal" instance=ExtResource("6_yo6w7")]
+transform = Transform3D(0.0454545, 0, 0, 0, -3.97376e-09, -0.0909091, 0, 0.0555556, -2.42841e-09, 0.716599, 2.49771, -0.0951992)
+
+[node name="Torch2" parent="Salonreal" instance=ExtResource("6_yo6w7")]
+transform = Transform3D(0.0454545, 0, 0, 0, -3.97376e-09, -0.0909091, 0, 0.0555556, -2.42841e-09, 0.716599, 0.857727, -0.0952002)
+
+[node name="Torch3" parent="Salonreal" instance=ExtResource("6_yo6w7")]
+transform = Transform3D(0.0454545, 0, 0, 0, -3.97376e-09, -0.0909091, 0, 0.0555556, -2.42841e-09, 0.716599, -1.06392, -0.0952002)
+
+[node name="GoblinKing" type="MeshInstance3D" parent="Salonreal"]
+transform = Transform3D(-0.151931, 0, -1.32822e-08, -3.68585e-08, -1.84293e-08, 0.421613, -9.84584e-16, 0.257652, 1.12623e-08, 0.11607, -1.16197, -0.441084)
+mesh = ExtResource("7_7bbwf")
+skeleton = NodePath("../..")
+
+[node name="Bowserthrone" type="MeshInstance3D" parent="Salonreal"]
+transform = Transform3D(-0.000594015, 0, -5.19305e-11, -1.44108e-10, -7.20542e-11, 0.00164841, -3.8495e-18, 0.00100736, 4.40331e-11, 0.11174, -2.35856, -0.47409)
+mesh = ExtResource("8_tqfs4")
+skeleton = NodePath("../..")
 
 [node name="Escaleras" type="Node3D" parent="."]
 transform = Transform3D(-6, -4.81032e-07, -6.62335e-07, 0, -2.39249, 17.4241, -5.24537e-07, 5.50236, 7.57623, -96.9286, -1.13065, -36.2651)
@@ -37,22 +67,26 @@ operation = 2
 size = Vector3(1, 1, 1.39477)
 
 [node name="brazopasillo3" type="CSGBox3D" parent="Escaleras"]
-transform = Transform3D(-4.37114e-08, 1.42109e-14, 3.16667, 0.399213, 0.916858, 5.52589e-08, -0.289534, 0.126067, -4.00771e-08, -20.7199, 5.85612, 0.415642)
-size = Vector3(1, 1, 2.56201)
+transform = Transform3D(-4.37114e-08, 1.42109e-14, 3.16667, 0.399213, 0.916858, 5.52589e-08, -0.289534, 0.126067, -4.00771e-08, -18.6501, 5.85612, 0.415642)
+size = Vector3(1, 1, 1.25476)
+material = ExtResource("1_3ryhr")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Escaleras/brazopasillo3"]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, -8.88178e-16, 0, 1, 9.53674e-07, 0, -0.0461279)
 operation = 2
 size = Vector3(1, 1, 2.71024)
+material = ExtResource("1_3ryhr")
 
 [node name="codo" type="CSGBox3D" parent="Escaleras"]
 transform = Transform3D(1, 2.84217e-14, -4.66918e-13, 1.42109e-14, 1.84729, -1.26357, 8.88178e-16, 0.254, 0.916426, -15.1818, 5.92213, 0.52687)
 size = Vector3(2.9801, 1.42236, 0.529785)
+material = ExtResource("1_3ryhr")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Escaleras/codo"]
-transform = Transform3D(1.23144, -1.81899e-12, -1.40166e-15, -1.10134e-13, 0.9, 1.00117e-08, -1.80411e-16, 0, 1, -0.567325, -0.120548, -0.0837378)
+transform = Transform3D(1.23144, -1.66267e-12, -2.23432e-15, -1.06581e-13, 0.899999, 9.1386e-09, -1.85615e-16, -3.8126e-09, 0.999986, -0.567325, -0.120548, -0.0803624)
 operation = 2
-size = Vector3(3.25432, 0.520081, 0.262525)
+size = Vector3(3.25432, 0.520081, 0.255774)
+material = ExtResource("1_3ryhr")
 
 [node name="Node3D" type="Node3D" parent="Escaleras/codo"]
 
@@ -60,6 +94,11 @@ size = Vector3(3.25432, 0.520081, 0.262525)
 transform = Transform3D(0.9, -3.09797e-12, -2.3731e-15, -1.14042e-12, 0.9, 1.69384e-08, 7.54605e-17, 0, 1, 0.13612, 0.00142816, 0.595305)
 operation = 2
 size = Vector3(2.72925, 1.41431, 1.59796)
+material = ExtResource("1_3ryhr")
 
 [node name="escaleras" parent="." instance=ExtResource("1_0fsli")]
 transform = Transform3D(0.093936, 0, 0.327184, 0, 0.480923, 0, -0.327184, 0, 0.093936, -14.0024, -9.60369, 18.408)
+visible = false
+
+[node name="escaleras2" parent="." instance=ExtResource("5_d63e5")]
+transform = Transform3D(0.0098771, 0, 0.384369, 0, 0.47885, 0, -0.384369, 0, 0.0098771, -9.46612, -9.56472, 22.1096)

@@ -10,4 +10,5 @@ albedo_texture = ExtResource("1_2a8bc")
 roughness_texture = ExtResource("3_sv5nu")
 normal_enabled = true
 normal_texture = ExtResource("2_fffh1")
+uv1_triplanar = true
 grow_amount = 0.285

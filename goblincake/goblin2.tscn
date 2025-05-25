@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dn88x37ikdawi"]
+
+[ext_resource type="PackedScene" uid="uid://bq41s00q4f4o1" path="res://Goblin2/m026_goblinout.dae" id="1_d1pft"]
+
+[node name="m026_goblinout" instance=ExtResource("1_d1pft")]

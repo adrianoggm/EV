@@ -1,13 +1,120 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkmw8d0p1x2wg"]
+[gd_scene load_steps=10 format=3 uid="uid://btlhmulyus5ev"]
 
-[ext_resource type="PackedScene" uid="uid://btlhmulyus5ev" path="res://ejercicio_1b.tscn" id="1_c6gwx"]
+[ext_resource type="Material" uid="uid://bhmqnopyhml8c" path="res://Materials/stonewall.tres" id="1_wygdx"]
+[ext_resource type="PackedScene" uid="uid://bg7gdvvs8wuj" path="res://torch.tscn" id="2_bah7m"]
+[ext_resource type="Script" uid="uid://daso6p8ambvqs" path="res://cam_vigi.gd" id="3_fv4w7"]
+[ext_resource type="PackedScene" uid="uid://bf20ovshy7ha7" path="res://torreon.tscn" id="4_fvag4"]
+[ext_resource type="PackedScene" uid="uid://ctno205juquob" path="res://comedor.tscn" id="5_kva58"]
+[ext_resource type="Script" uid="uid://bc77k1w14ffek" path="res://camaraprim_persona.gd" id="6_f5c0m"]
+[ext_resource type="Script" uid="uid://bxo62fc4xfw8x" path="res://test.gd" id="7_b2ar6"]
+[ext_resource type="PackedScene" uid="uid://hp70ap4f71mg" path="res://Goblin.tscn" id="7_bah7m"]
+[ext_resource type="PackedScene" uid="uid://dgx5bnx2ye413" path="res://eyeball.tscn" id="9_fv4w7"]
 
-[node name="Node3D" type="Node3D"]
+[node name="World" type="Node3D"]
 
-[node name="Ejercicio1B" parent="." instance=ExtResource("1_c6gwx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0679655, 0.0679922, 0.00237465)
+[node name="Pasillo" type="Node3D" parent="."]
+transform = Transform3D(6, 0, 0, 0, 5.50115, 7.58505, 0, -2.39528, 17.4203, -0.281, 2.5394, -39.9691)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-light_energy = 1.41
-omni_range = 30.016
+[node name="brazopasillo2" type="CSGBox3D" parent="Pasillo"]
+transform = Transform3D(1, 0, 0, 0, 0.916858, -1.26417, 0, 0.126067, 0.916858, 0, -1.38504, 1.00452)
+size = Vector3(1, 1, 1.10889)
+material = ExtResource("1_wygdx")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Pasillo/brazopasillo2"]
+transform = Transform3D(0.900008, 0, 0, 0, 0.900007, 4.54747e-13, 0, -3.12639e-13, 1, 0, -2.08616e-07, -0.0648454)
+operation = 2
+size = Vector3(1, 1, 1.67944)
+material = ExtResource("1_wygdx")
+
+[node name="Torch4" parent="Pasillo/brazopasillo2" instance=ExtResource("2_bah7m")]
+transform = Transform3D(0.166553, 0, -0.00616543, -8.04607e-09, 0.166667, -2.17356e-07, 0.00194698, 5.8559e-08, 0.0525956, 0.452799, 0.0927882, -0.294574)
+
+[node name="brazopasillo3" type="CSGBox3D" parent="Pasillo"]
+transform = Transform3D(-4.37114e-08, 0, 3.16667, 0.399213, 0.916858, 5.52588e-08, -0.289534, 0.126067, -4.00771e-08, -4.531, -0.250552, 0.181716)
+size = Vector3(1, 1, 2.56201)
+material = ExtResource("1_wygdx")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Pasillo/brazopasillo3"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, -8.88178e-16, 0, 1, 9.53674e-07, 0, -0.0461279)
+operation = 2
+size = Vector3(1, 1, 2.71024)
+material = ExtResource("1_wygdx")
+
+[node name="Torch" parent="Pasillo/brazopasillo3" instance=ExtResource("2_bah7m")]
+transform = Transform3D(0.166611, -1.85437e-07, 0.00429885, -1.98616e-08, 0.166667, -5.12464e-10, -0.00135753, -2.55969e-15, 0.052614, 0.451562, 0.130235, -0.924958)
+
+[node name="Torch2" parent="Pasillo/brazopasillo3" instance=ExtResource("2_bah7m")]
+transform = Transform3D(0.166611, -1.85437e-07, 0.00429885, -1.98616e-08, 0.166667, -5.12464e-10, -0.00135753, -2.55969e-15, 0.052614, 0.451562, 0.130235, 0.317537)
+
+[node name="codo" type="CSGBox3D" parent="Pasillo"]
+transform = Transform3D(1, 0, 0, 0, 0.916858, -1.26417, 0, 0.126067, 0.916858, 0, -0.368954, 0.267588)
+size = Vector3(1, 1, 0.529785)
+material = ExtResource("1_wygdx")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Pasillo/codo"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 1.92415e-11, 0, -1.44418e-12, 1, -0.406528, -2.98023e-08, -0.091269)
+operation = 2
+size = Vector3(1.91637, 1, 0.247463)
+material = ExtResource("1_wygdx")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Pasillo/codo"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 8.72546e-12, 0, -6.55476e-13, 1, -0.0214233, -5.96046e-08, 0.0358849)
+operation = 2
+size = Vector3(1.04761, 1, 0.479118)
+material = ExtResource("1_wygdx")
+
+[node name="Torch3" parent="Pasillo/codo" instance=ExtResource("2_bah7m")]
+transform = Transform3D(-0.00429885, 0, 0.166611, 2.17433e-07, 0.166667, 5.61013e-09, -0.0526141, 5.8559e-08, -0.00135753, -0.021692, 0.130237, -0.215273)
+
+[node name="CamVigi" type="Node3D" parent="Pasillo/codo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.293613, 0.242901, -0.168191)
+script = ExtResource("3_fv4w7")
+
+[node name="Camera3D" type="Camera3D" parent="Pasillo/codo/CamVigi"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="Eyeball" parent="Pasillo/codo/CamVigi/Camera3D" instance=ExtResource("9_fv4w7")]
+transform = Transform3D(-5.06628e-08, -7.85132e-14, 0.217318, -2.41793e-07, 0.217318, 2.21448e-14, -0.217318, -2.41793e-07, -5.06628e-08, 0.0473402, -0.00654817, 0.203434)
+
+[node name="torreon" parent="." instance=ExtResource("4_fvag4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.709, 10.445, -35.3626)
+
+[node name="Cocina" parent="." instance=ExtResource("5_kva58")]
+transform = Transform3D(-6.55671e-09, 0, 0.15, 0, 0.15, 0, -0.15, 0, -6.55671e-09, -0.3623, -0.288581, -1.33791)
+
+[node name="CamaraprimPersona" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00189209, 0.0180182, 0.0235291)
+script = ExtResource("6_f5c0m")
+
+[node name="Yaw" type="Node3D" parent="CamaraprimPersona"]
+
+[node name="Pitch" type="Node3D" parent="CamaraprimPersona/Yaw"]
+
+[node name="Camera3D" type="Camera3D" parent="CamaraprimPersona/Yaw/Pitch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.65658, -0.188989)
+
+[node name="Goblin" parent="CamaraprimPersona/Yaw/Pitch/Camera3D" instance=ExtResource("7_bah7m")]
+transform = Transform3D(-0.661056, 0, -5.77913e-08, 0, 0.661056, 0, 5.77913e-08, 0, -0.661056, 0, -2.65658, 0.553286)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+offset_right = 256.0
+offset_bottom = 115.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+
+[node name="Instrucciones" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "	W/A/S/D: Moverse
+	Ratón: Mirar
+	Esc: Salir
+	Espacio: Animación Olla
+	L: Animación luz
+	Scroll/+/-: Zoom (solo cámara estática)
+	1:Cámara FPV 
+	2: Cámara Vigi"
+
+[node name="Test" type="Node" parent="."]
+script = ExtResource("7_b2ar6")

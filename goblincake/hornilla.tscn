@@ -19,8 +19,9 @@ colors = PackedColorArray(0, 0, 0, 1, 0.0229008, 0.0229008, 0.0229008, 1, 0, 0.4
 gradient = SubResource("Gradient_43g6j")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pfecg"]
+lifetime_randomness = 0.7
 emission_shape = 1
-emission_sphere_radius = 1.75
+emission_sphere_radius = 0.7
 angle_min = 17.5
 angle_max = 360.0
 direction = Vector3(0, 1, 0)
@@ -28,17 +29,20 @@ spread = 0.0
 initial_velocity_min = 0.5
 initial_velocity_max = 5.0
 angular_velocity_min = 0.999984
-angular_velocity_max = 60.0
+angular_velocity_max = 3.99998
 gravity = Vector3(0, 0, 0)
 linear_accel_min = 0.999998
-linear_accel_max = 4.0
+linear_accel_max = 3.0
 radial_accel_min = 0.999998
-radial_accel_max = 5.0
+radial_accel_max = 3.0
 tangential_accel_min = 0.999998
-tangential_accel_max = 3.0
+tangential_accel_max = 0.999998
+scale_min = 0.3
+scale_max = 0.3
 color_ramp = SubResource("GradientTexture1D_oud8c")
 hue_variation_min = -2.23517e-08
 hue_variation_max = -2.23517e-08
+collision_use_scale = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_pfecg"]
 material = ExtResource("5_pwys7")
@@ -211,7 +215,7 @@ transform = Transform3D(-0.0282132, -0.000922389, -0.74525, 6.30974e-05, 0.74578
 
 [node name="fuego" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0375, -3.42776, 5.59176)
-amount = 100
+amount = 80
 lifetime = 0.4
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_pfecg")
