@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ddhvp6qtgq01l" path="res://blender/ollanormales.glb" id="1_vlng3"]
 [ext_resource type="Shader" uid="uid://qn42uv3h0qo6" path="res://caldo.gdshader" id="2_1naq3"]
 [ext_resource type="Material" uid="uid://gsnkgovlwtfp" path="res://Materials/cristal.tres" id="2_qgrok"]
-[ext_resource type="Texture2D" uid="uid://7q4har3wxcdd" path="res://blender/agua.png" id="3_co0t4"]
+[ext_resource type="Texture2D" uid="uid://tiaa8ysc3s8s" path="res://blender/agua.png" id="3_co0t4"]
 [ext_resource type="Material" uid="uid://dllxiplpycdjh" path="res://Materials/jademagico.tres" id="3_vmiwc"]
 [ext_resource type="Material" uid="uid://dnpxwb247hfy6" path="res://Materials/acero2.tres" id="4_i38s7"]
 [ext_resource type="Material" uid="uid://cu6va35lo1o3e" path="res://Materials/rosa.tres" id="5_8lccu"]

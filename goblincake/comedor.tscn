@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ctno205juquob"]
+[gd_scene load_steps=12 format=3 uid="uid://ctno205juquob"]
 
 [ext_resource type="Material" uid="uid://bhmqnopyhml8c" path="res://Materials/stonewall.tres" id="1_fav0f"]
 [ext_resource type="PackedScene" uid="uid://ga74va0ua5p" path="res://mueblecocina.tscn" id="2_eeqvw"]
@@ -7,6 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://dq74uhysncyit" path="res://hornilla.tscn" id="4_0dl3l"]
 [ext_resource type="Script" uid="uid://01mg746ku5j0" path="res://camera_3d.gd" id="5_n0l6q"]
 [ext_resource type="PackedScene" uid="uid://bg7gdvvs8wuj" path="res://torch.tscn" id="7_vpqt6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yia58"]
+size = Vector3(0.108196, 0.0882721, 0.00751495)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vpqt6"]
+size = Vector3(0.00502396, 0.0939331, 0.0300293)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_igmj8"]
+size = Vector3(0.0796967, 0.00714697, 0.0925293)
 
 [sub_resource type="QuadMesh" id="QuadMesh_fav0f"]
 
@@ -32,7 +41,35 @@ transform = Transform3D(0.109054, 0, 0, 0, 0.41938, 0, 0, 0, 0.179516, -0.014101
 operation = 2
 material = ExtResource("1_fav0f")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Comedor"]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 0, -0.0532066, 0)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Comedor/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0104448, 0.00510272, 0.0385511)
+shape = SubResource("BoxShape3D_yia58")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Comedor/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0402567, 0.00510272, 0.000892876)
+shape = SubResource("BoxShape3D_yia58")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Comedor/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0104448, 0.00510272, -0.0420491)
+shape = SubResource("BoxShape3D_yia58")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Comedor/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0401869, 0.00327163, 0.0264069)
+shape = SubResource("BoxShape3D_vpqt6")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Comedor/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0402575, 0.00327163, -0.0263574)
+shape = SubResource("BoxShape3D_vpqt6")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Comedor/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00454541, -0.0382329, 0.000854478)
+shape = SubResource("BoxShape3D_igmj8")
+
 [node name="hornilla" parent="." instance=ExtResource("4_0dl3l")]
+physics_interpolation_mode = 1
 transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, -7.8151, 11.1703, -41.1391)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -53,9 +90,11 @@ near = 2.118
 script = ExtResource("5_n0l6q")
 
 [node name="mueblecocina" parent="." instance=ExtResource("2_eeqvw")]
+physics_interpolation_mode = 1
 transform = Transform3D(-1.51986e-07, 0, 3.15793, 0, 2.18618, 0, -3.01435, 0, -1.19669e-07, -46.5915, 11.5626, 6.06867)
 
 [node name="mesa" parent="." instance=ExtResource("3_w6nvf")]
+physics_interpolation_mode = 1
 transform = Transform3D(-6, 0, -5.24537e-07, 0, 6, 0, 5.24537e-07, 0, -6, -0.288493, 7.17663, 32.9778)
 
 [node name="antorchas" type="Node3D" parent="."]

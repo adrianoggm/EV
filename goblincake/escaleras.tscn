@@ -1,9 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cyo8cjo5x3x70"]
+[gd_scene load_steps=2 format=3 uid="uid://cyo8cjo5x3x70"]
 
 [ext_resource type="PackedScene" uid="uid://cpyomevaxtkll" path="res://blender/escaleras.glb" id="1_wa0ve"]
-[ext_resource type="Material" uid="uid://dwtlowqkcbu0k" path="res://Materials/woodsuelo.tres" id="2_v22oq"]
 
 [node name="escaleras" instance=ExtResource("1_wa0ve")]
 
-[node name="Escaleras" parent="." index="0"]
-surface_material_override/0 = ExtResource("2_v22oq")
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]

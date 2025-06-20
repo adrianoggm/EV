@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://btlhmulyus5ev"]
+[gd_scene load_steps=18 format=3 uid="uid://btlhmulyus5ev"]
 
 [ext_resource type="Material" uid="uid://bhmqnopyhml8c" path="res://Materials/stonewall.tres" id="1_wygdx"]
 [ext_resource type="PackedScene" uid="uid://bg7gdvvs8wuj" path="res://torch.tscn" id="2_bah7m"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://hp70ap4f71mg" path="res://Goblin.tscn" id="7_bah7m"]
 [ext_resource type="Script" uid="uid://duc6kg1x7geph" path="res://character_body_3d.gd" id="8_fv4w7"]
 [ext_resource type="PackedScene" uid="uid://dgx5bnx2ye413" path="res://eyeball.tscn" id="9_fv4w7"]
-[ext_resource type="PackedScene" uid="uid://b3p261dsxd73w" path="res://pelota.tscn" id="10_fvag4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fvag4"]
 size = Vector3(0.0959473, 1, 1.31618)
@@ -168,30 +167,21 @@ script = ExtResource("7_b2ar6")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 script = ExtResource("8_fv4w7")
+speed = null
+sensitivity = null
+jump_velocity = null
 
 [node name="Yaw" type="Node3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00189209, 0.0180182, 0.0235291)
 
 [node name="Pitch" type="Node3D" parent="CharacterBody3D/Yaw"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.73721, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Yaw/Pitch"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.093007)
-cull_mask = 1048573
-
-[node name="RayCast3D" type="RayCast3D" parent="CharacterBody3D/Yaw/Pitch/Camera3D"]
-target_position = Vector3(0, 0, -5)
-
-[node name="HeldItemSocketRight" type="Node3D" parent="CharacterBody3D/Yaw/Pitch"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.3, -1)
-
-[node name="HeldItemSocketCenter" type="Node3D" parent="CharacterBody3D/Yaw/Pitch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.65658, -0.188989)
 
 [node name="Goblin" parent="CharacterBody3D" instance=ExtResource("7_bah7m")]
 transform = Transform3D(-0.661056, 0, -5.77913e-08, 0, 0.661056, 0, 5.77913e-08, 0, -0.661056, -0.00189209, 0.0180182, 0.387826)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0248572, 1.72467, 0.225678)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.138023, 1.72467, 0)
 shape = SubResource("CapsuleShape3D_fv4w7")
-
-[node name="Pelota" parent="." instance=ExtResource("10_fvag4")]

@@ -3,3 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://cvvnakr5uaitr" path="res://goblin.glb" id="1_r0bjo"]
 
 [node name="Sketchfab_Scene" instance=ExtResource("1_r0bjo")]
+
+[node name="Object_54" parent="Sketchfab_model/6867a78c3ba840f3882d4b84a833f1a9_fbx/Object_2/RootNode/Armature/Object_5/Skeleton3D" index="0"]
+layers = 2

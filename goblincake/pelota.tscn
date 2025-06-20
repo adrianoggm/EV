@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3p261dsxd73w"]
+
+[ext_resource type="Material" uid="uid://dllxiplpycdjh" path="res://Materials/jademagico.tres" id="1_sha3n"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_sha3n"]
+radius = 0.512316
+
+[sub_resource type="SphereMesh" id="SphereMesh_0okw3"]
+
+[node name="Pelota" type="RigidBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_sha3n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_0okw3")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("1_sha3n")
