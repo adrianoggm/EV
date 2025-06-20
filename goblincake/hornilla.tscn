@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dq74uhysncyit"]
+[gd_scene load_steps=21 format=3 uid="uid://dq74uhysncyit"]
 
 [ext_resource type="Material" uid="uid://bnaiodhl0dv54" path="res://Materials/stone.tres" id="1_1k3pg"]
 [ext_resource type="PackedScene" uid="uid://b6bxjh8rjy2s7" path="res://blender/ollaanimada.tscn" id="1_hil6c"]
@@ -10,6 +10,18 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pfecg"]
 albedo_color = Color(0.169245, 0.169245, 0.169245, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pwys7"]
+size = Vector3(9.19238, 1, 4.10382)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pwys7"]
+radius = 3.18843
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t83v2"]
+size = Vector3(0.318909, 4.59186, 4.74392)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w71lc"]
+size = Vector3(8.13232, 4.0625, 0.926758)
 
 [sub_resource type="Gradient" id="Gradient_43g6j"]
 offsets = PackedFloat32Array(0, 0.0127226, 0.173028, 0.318066, 0.529262, 1)
@@ -180,35 +192,59 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02485, 6.95683, -0.397081)
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1.8949, 0, 0, 0, 1.41094, 0, 0, 0, 1.86545, 0, -0.235114, 0)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Node3D"]
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Node3D/CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.61822, -2.25266, 2.7257)
 size = Vector3(9.37408, 3.69458, 4.63989)
 material = ExtResource("1_1k3pg")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Node3D/CSGBox3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Node3D/CSGCombiner3D/CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.101528, -0.0224304, 0.351959)
 operation = 2
 size = Vector3(8.69324, 3.3598, 4.15607)
 material = SubResource("StandardMaterial3D_pfecg")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Node3D/CSGBox3D"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Node3D/CSGCombiner3D/CSGBox3D"]
 transform = Transform3D(1.77657, 0, 0, 0, 2.48912, 0, 0, 0, 2.60442, 0.258237, 1.61176, -0.24453)
 operation = 2
 size = Vector3(2.28577, 1, 1)
 
-[node name="tablonsuperior" type="CSGBox3D" parent="Node3D"]
+[node name="tablonsuperior" type="CSGBox3D" parent="Node3D/CSGCombiner3D"]
 transform = Transform3D(2.49812, 0, 0, 0, 0.99925, 0, 0, 0, 4.99625, 2.56172, 0, 2.64036)
 size = Vector3(3.69391, 1, 0.802856)
 material = ExtResource("2_tya4x")
 
-[node name="CSGTorus3D" type="CSGTorus3D" parent="Node3D/tablonsuperior"]
+[node name="CSGTorus3D" type="CSGTorus3D" parent="Node3D/CSGCombiner3D/tablonsuperior"]
 transform = Transform3D(0.816083, 0, 0, 0, 2.3858, 0, 0, 0, 0.254768, 0.139994, 0.520499, 0.0115843)
 material = ExtResource("3_pfecg")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Node3D/tablonsuperior"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Node3D/CSGCombiner3D/tablonsuperior"]
 transform = Transform3D(0.711161, 0, 0, 0, 2.49099, 0, 0, 0, 0.521275, 0.125809, -0.668132, 0)
 operation = 2
 size = Vector3(2.28577, 1, 1)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/CSGCombiner3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/CSGCombiner3D/StaticBody3D"]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.99996, 2.54052, 0, 2.64504)
+shape = SubResource("BoxShape3D_pwys7")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Node3D/CSGCombiner3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 2.72754, -3.55173, 1.72706)
+shape = SubResource("SphereShape3D_pwys7")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Node3D/CSGCombiner3D/StaticBody3D"]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999939, -1.77455, -1.93911, 2.64383)
+shape = SubResource("BoxShape3D_t83v2")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Node3D/CSGCombiner3D/StaticBody3D"]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999937, 7.00089, -1.93911, 2.76502)
+shape = SubResource("BoxShape3D_t83v2")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Node3D/CSGCombiner3D/StaticBody3D"]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999977, 1.74096, -1.92823, 0.652564)
+shape = SubResource("BoxShape3D_w71lc")
 
 [node name="ollaanimada" parent="." instance=ExtResource("1_hil6c")]
 transform = Transform3D(-0.0282132, -0.000922389, -0.74525, 6.30974e-05, 0.745784, -0.000925436, 0.745251, -9.80489e-05, -0.0282131, 5.5159, 1.05608, 4.86936)

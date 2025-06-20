@@ -195,3 +195,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0248572, 1.72467, 0.225678
 shape = SubResource("CapsuleShape3D_fv4w7")
 
 [node name="Pelota" parent="." instance=ExtResource("10_fvag4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.731933, -3.5164)
