@@ -68,6 +68,10 @@ shape = SubResource("BoxShape3D_vpqt6")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00454541, -0.0382329, 0.000854478)
 shape = SubResource("BoxShape3D_igmj8")
 
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Comedor/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00454541, 0.0496166, 0.000854478)
+shape = SubResource("BoxShape3D_igmj8")
+
 [node name="hornilla" parent="." instance=ExtResource("4_0dl3l")]
 physics_interpolation_mode = 1
 transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, -7.8151, 11.1703, -41.1391)

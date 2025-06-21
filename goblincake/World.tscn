@@ -1,5 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://btlhmulyus5ev"]
+[gd_scene load_steps=27 format=3 uid="uid://btlhmulyus5ev"]
 
+[ext_resource type="Script" uid="uid://begoxnrardiav" path="res://world.gd" id="1_b2ar6"]
 [ext_resource type="Material" uid="uid://bhmqnopyhml8c" path="res://Materials/stonewall.tres" id="1_wygdx"]
 [ext_resource type="PackedScene" uid="uid://bg7gdvvs8wuj" path="res://torch.tscn" id="2_bah7m"]
 [ext_resource type="Script" uid="uid://daso6p8ambvqs" path="res://cam_vigi.gd" id="3_fv4w7"]
@@ -10,6 +11,9 @@
 [ext_resource type="Script" uid="uid://duc6kg1x7geph" path="res://character_body_3d.gd" id="8_fv4w7"]
 [ext_resource type="PackedScene" uid="uid://dgx5bnx2ye413" path="res://eyeball.tscn" id="9_fv4w7"]
 [ext_resource type="PackedScene" uid="uid://b3p261dsxd73w" path="res://pelota.tscn" id="10_fvag4"]
+[ext_resource type="Script" uid="uid://dhqfqjktfw3al" path="res://bolamorada.gd" id="11_f5c0m"]
+[ext_resource type="Material" uid="uid://c337582a6hyjw" path="res://Materials/caldo.tres" id="11_kva58"]
+[ext_resource type="Script" uid="uid://bjnaas10tidqv" path="res://pelota.gd" id="12_gn8l5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fvag4"]
 size = Vector3(0.0959473, 1, 1.31618)
@@ -21,7 +25,7 @@ size = Vector3(0.0940247, 1, 1.63385)
 size = Vector3(1.2691, 0.230469, 1.62155)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b2ar6"]
-size = Vector3(1, 0.121933, 2.83679)
+size = Vector3(1, 0.121933, 3.99847)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ee7l0"]
 size = Vector3(0.247437, 1, 2.61145)
@@ -36,7 +40,19 @@ size = Vector3(1, 1.16986, 0.071991)
 radius = 0.639282
 height = 3.42097
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_fvag4"]
+radius = 0.507905
+
+[sub_resource type="SphereMesh" id="SphereMesh_fvag4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6w02q"]
+size = Vector3(8.33055, 8.2728, 10.6202)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1fphk"]
+size = Vector3(3.24023, 9.07816, 10.5006)
+
 [node name="World" type="Node3D"]
+script = ExtResource("1_b2ar6")
 
 [node name="Pasillo" type="Node3D" parent="."]
 transform = Transform3D(6, 0, 0, 0, 5.50115, 7.58505, 0, -2.39528, 17.4203, -0.281, 2.5394, -39.9691)
@@ -70,6 +86,10 @@ shape = SubResource("BoxShape3D_kva58")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, -2.84217e-14, 1, 0.0169373, -0.545132, -0.255233)
 shape = SubResource("BoxShape3D_fv4w7")
 
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Pasillo/brazopasillo2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, -2.84217e-14, 1, 0.0169373, 0.498827, -0.255233)
+shape = SubResource("BoxShape3D_fv4w7")
+
 [node name="brazopasillo3" type="CSGBox3D" parent="Pasillo"]
 transform = Transform3D(-4.37114e-08, 0, 3.16667, 0.399213, 0.916858, 5.52588e-08, -0.289534, 0.126067, -4.00771e-08, -4.531, -0.250552, 0.181716)
 size = Vector3(1, 1, 2.56201)
@@ -91,6 +111,10 @@ transform = Transform3D(0.166611, -1.85437e-07, 0.00429885, -1.98616e-08, 0.1666
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pasillo/brazopasillo3/StaticBody3D"]
 transform = Transform3D(1.00007, 6.73026e-11, 0, 1.42109e-14, 1, 0, -1.68754e-14, -1.66018e-19, 1, 1.43051e-06, -0.495347, 0.126892)
+shape = SubResource("BoxShape3D_b2ar6")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Pasillo/brazopasillo3/StaticBody3D"]
+transform = Transform3D(1.00008, 7.3328e-11, 0, 1.42109e-14, 1, 0, -1.77636e-14, -1.82959e-19, 1, 0, 0.490688, -0.45395)
 shape = SubResource("BoxShape3D_b2ar6")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Pasillo/brazopasillo3/StaticBody3D"]
@@ -159,7 +183,10 @@ text = "	W/A/S/D: Moverse
 	Esc: Salir
 	Espacio: Animación Olla
 	L: Animación luz
+E: Recoger Objetos
+Q: Tirar Objetos
 	Scroll/+/-: Zoom (solo cámara estática)
+Espacio: Volar(bolamorada)
 	1:Cámara FPV 
 	2: Cámara Vigi"
 
@@ -194,5 +221,31 @@ transform = Transform3D(-0.661056, 0, -5.77913e-08, 0, 0.661056, 0, 5.77913e-08,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0248572, 1.72467, 0.225678)
 shape = SubResource("CapsuleShape3D_fv4w7")
 
-[node name="Pelota" parent="." instance=ExtResource("10_fvag4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.731933, -3.5164)
+[node name="bolaverde" parent="." instance=ExtResource("10_fvag4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03254, -3.5164)
+script = ExtResource("12_gn8l5")
+
+[node name="bolamorada" type="RigidBody3D" parent="."]
+transform = Transform3D(0.503226, 0, 0, 0, 0.503226, 0, 0, 0, 0.503226, 0.456638, 2.04081, 5.02412)
+script = ExtResource("11_f5c0m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bolamorada"]
+shape = SubResource("SphereShape3D_fvag4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="bolamorada"]
+mesh = SubResource("SphereMesh_fvag4")
+surface_material_override/0 = ExtResource("11_kva58")
+
+[node name="AreaToCocina" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -86.2236, 0, -3.75467)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AreaToCocina"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.7519, 2.96071, -30.8063)
+shape = SubResource("BoxShape3D_6w02q")
+
+[node name="AreaToTorreon" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.1103, 9.01088, -34.7446)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AreaToTorreon"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9686, -7.94894, -0.26622)
+shape = SubResource("BoxShape3D_1fphk")

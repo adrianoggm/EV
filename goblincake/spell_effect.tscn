@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://mfmxnxotr7x8"]
+
+[ext_resource type="Texture2D" uid="uid://co0ugu2w3arb" path="res://utils/rayo.png" id="1_3hl3j"]
+
+[sub_resource type="Gradient" id="Gradient_xgcmk"]
+offsets = PackedFloat32Array(0.0117647, 0.288235, 0.588235, 0.882353)
+colors = PackedColorArray(0.667259, 0.7022, 1, 1, 0.448305, 0.453826, 0.999984, 1, 1, 1, 1, 0, 0.210428, 0.000334316, 0.703203, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3hl3j"]
+gradient = SubResource("Gradient_xgcmk")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xgcmk"]
+lifetime_randomness = 0.3
+emission_shape = 1
+emission_sphere_radius = 0.3
+angle_min = 15.0
+angle_max = 15.0
+spread = 7.699
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+gravity = Vector3(0, 0, 0)
+color = Color(0.650858, 0.687976, 1, 1)
+color_ramp = SubResource("GradientTexture1D_3hl3j")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xgcmk"]
+transparency = 1
+albedo_color = Color(0.643137, 1, 1, 1)
+albedo_texture = ExtResource("1_3hl3j")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_xgcmk"]
+material = SubResource("StandardMaterial3D_xgcmk")
+size = Vector2(0.5, 0.5)
+
+[node name="SpellEffect" type="Node3D"]
+
+[node name="Particles" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.393571, 0, 0, 0, 0.393571, 0, 0, 0, 0.393571, 0, 0, 0)
+transparency = 0.24
+amount = 200
+amount_ratio = 0.9805
+lifetime = 0.97
+collision_base_size = 0.66
+process_material = SubResource("ParticleProcessMaterial_xgcmk")
+draw_pass_1 = SubResource("QuadMesh_xgcmk")
